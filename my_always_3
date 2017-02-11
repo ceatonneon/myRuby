@@ -1,0 +1,2 @@
+puts "Give me a number"
+gets answer.to_i
