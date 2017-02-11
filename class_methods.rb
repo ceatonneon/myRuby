@@ -1,48 +1,21 @@
 class Family
-  def set_name=(name)
-    @name = name
-  end
-  def get_name
-    return @name
-  end
-  def set_age= age
-    @age = age
-  end
-  def get_age
-    return @age
-  end
+attr_accessor :name, :age
+end
+class Parent<Family
+  attr_accessor :my_child_name, :spouse_name, :child_address
+end
 
-  parent<Family
-   def set_my_child=(my_child_name)
-     @my_child = my_child_name
-   end
-   def get_child
-     return @my_child
-   end
-   def set_spouse=(spouse_name)
-     @spouse = spouse_name
-   end
-   def set_address=(child_address)
-     @address = child_address
-   end
- end
-
-  class grandchild<Family
-  def set_gcdname=(grandchild_name)
-    @gcdname=grandchild_name
-  end
-  def get_gcdname
-    return @gcdname
-  end
-
+class Grandchild<Parent
+  attr_accessor :grandchild_name
+end
 
 my_grandchild = Grandchild.new
-my_grandchild.set_name = "Kaeden"
-my_child.set_parent = "Colin"
-my_grandchild.set_age = "17 months"
+my_grandchild.grandchild_name = "Kaeden"
+my_grandchild.my_child_name = "Colin"
+my_grandchild.age = "17 months"
 
-Grandchildname = my_grandchild.get_name
-Grandchildage = my_grandchild.get_age
-Grandchildparent = my_grandchild.get_parent
+Grandchildname = my_grandchild.grandchild_name
+Grandchildage = my_grandchild.age
+Grandchildparent = my_grandchild.my_child_name
 
 puts "#{Grandchildparent} is father to my grandson #{Grandchildname}.  I can't believe he's #{Grandchildage} already!"
